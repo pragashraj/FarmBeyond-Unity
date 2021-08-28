@@ -347,11 +347,21 @@
 "Assets/Scripts/Player/ThirdPersonCharacterControl.cs"
 "Assets/Scripts/Robot/RobotManager.cs"
 "Assets/Scripts/Robot/RobotPurchase.cs"
+"Assets/Scripts/robotAnimations/BucketRoute.cs"
+"Assets/Scripts/robotAnimations/BucketRouteAnimator.cs"
+"Assets/Scripts/robotAnimations/CookingScript.cs"
+"Assets/Scripts/robotAnimations/CookingSMB.cs"
+"Assets/Scripts/robotAnimations/GatherResource.cs"
+"Assets/Scripts/robotAnimations/LiftScript.cs"
+"Assets/Scripts/robotAnimations/LiftSMB.cs"
+"Assets/Scripts/robotAnimations/RunningVillagers.cs"
 "Assets/Scripts/Vegetation/CornManager.cs"
 "Assets/Scripts/Vegetation/FruitManager.cs"
 "Assets/Scripts/Vegetation/MelonManager.cs"
 "Assets/Scripts/Vegetation/MushroomManager.cs"
 "Assets/Scripts/Vegetation/VegetationTriggerManager.cs"
+"Assets/Scripts/Villager/VilagerAI.cs"
+"Assets/Scripts/Villager/VilagerMovement.cs"
 -langversion:8.0
 
 /deterministic

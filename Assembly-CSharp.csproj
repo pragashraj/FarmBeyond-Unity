@@ -88,9 +88,19 @@
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\MeshContainer.cs" />
     <Compile Include="Assets\Scripts\BuildCamp\BuilderManager.cs" />
     <Compile Include="Assets\Scripts\Camera\ThirdPersonOrbitCamBasic.cs" />
+    <Compile Include="Assets\Scripts\Managers\ProductSellManager.cs" />
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Scripts\Vegetation\CornManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\ProductSellManager.cs" />
+    <Compile Include="Assets\Scripts\robotAnimations\GatherResource.cs" />
+    <Compile Include="Assets\Scripts\robotAnimations\BucketRouteAnimator.cs" />
+    <Compile Include="Assets\Scripts\robotAnimations\LiftScript.cs" />
+    <Compile Include="Assets\Scripts\robotAnimations\LiftSMB.cs" />
+    <Compile Include="Assets\Scripts\robotAnimations\RunningVillagers.cs" />
+    <Compile Include="Assets\Scripts\robotAnimations\BucketRoute.cs" />
+    <Compile Include="Assets\Scripts\robotAnimations\CookingSMB.cs" />
+    <Compile Include="Assets\Scripts\robotAnimations\CookingScript.cs" />
+    <Compile Include="Assets\Scripts\Villager\VilagerAI.cs" />
+    <Compile Include="Assets\Scripts\Villager\VilagerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\Models\Water\Water\Shaders\FXWaterPro.shader" />

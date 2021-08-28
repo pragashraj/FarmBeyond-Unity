@@ -7,6 +7,7 @@ public class ProductSellManager : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private GameObject mainUI;
+    [SerializeField] private GameObject triggerUI;
     [SerializeField] private GameObject selectedProp;
     [SerializeField] private GameObject selectedPropTemp;
     [SerializeField] private Text total;
@@ -83,8 +84,9 @@ public class ProductSellManager : MonoBehaviour
         totalProps = total;
         SetTotalValue(total);
 
-        if (onStay)
+        if (onStay && Input.GetKeyDown(KeyCode.P))
         {
+            SetMainUI(true);
             HandleCursorActive(false);
         }
     }
@@ -111,6 +113,11 @@ public class ProductSellManager : MonoBehaviour
         mainUI.SetActive(active);
     }
 
+    private void SetTriggerUI(bool active)
+    {
+        triggerUI.SetActive(active);
+    }
+
     private void HandleCursorActive(bool active)
     {
         Cursor.visible = !active;
@@ -122,8 +129,7 @@ public class ProductSellManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SetMainUI(true);
-            HandleCursorActive(false);
+           
         }
     }
 
@@ -132,6 +138,7 @@ public class ProductSellManager : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             onStay = true;
+            SetTriggerUI(true);
         }
     }
 
@@ -139,7 +146,7 @@ public class ProductSellManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SetMainUI(false);
+            SetTriggerUI(false);
             HandleCursorActive(true);
             onStay = false;
         }
