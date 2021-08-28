@@ -3,6 +3,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static int galleons;
+    private static int goldToNextLevel;
+    private static int goldCurrent;
 
     private static int corns;
     private static int melons;
@@ -26,6 +28,8 @@ public class GameManager : MonoBehaviour
     private static int cotton;
 
     public int Galleons { get { return galleons; } set { galleons = value; } }
+    public int GoldToNextLevel { get { return goldToNextLevel; } set { goldToNextLevel = value; } }
+    public int GoldCurrent { get { return goldCurrent; } set { goldCurrent = value; } }
 
     public int Chickens { get { return chickens; } set { chickens = value; } }
     public int Pigs { get { return pigs; } set { pigs = value; } }
@@ -52,6 +56,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         galleons = 0;
+        goldCurrent = 0;
+        goldToNextLevel = 5;
         corns = 0;
         melons = 0;
         mushrooms = 0;
@@ -59,6 +65,16 @@ public class GameManager : MonoBehaviour
         pigs = 0;
         cows = 0;
         goats = 0;
-        sheeps = 2;
+        sheeps = 0;
+        eggs = 0;
+        pigMeats = 0;
+        cowMilks = 0;
+        goatMilks = 0;
+        cotton = 0;
+        apples = 0;
+        oranges = 0;
+        mines = 0;
+        fishes = 0;
+        woods = 0;
     }
 }

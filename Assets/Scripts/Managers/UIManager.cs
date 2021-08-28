@@ -40,6 +40,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text cowMilkText;
     [SerializeField] private Text goatMilkText;
     [SerializeField] private Text cottonText;
+    [SerializeField] private Text balanceText;
+    [SerializeField] private Text goldToNextText;
+    [SerializeField] private Text goldCurrent;
 
     [Header("Objects")]
     [SerializeField] private GameObject gameManagerObj;
@@ -87,6 +90,9 @@ public class UIManager : MonoBehaviour
         cowMilkText.text = gameManager.CowMilks.ToString();
         goatMilkText.text = gameManager.GoatMilks.ToString();
         cottonText.text = gameManager.Cotton.ToString();
+        balanceText.text = gameManager.Galleons.ToString();
+        goldToNextText.text = gameManager.GoldToNextLevel.ToString();
+        goldCurrent.text = gameManager.GoldCurrent.ToString();
     }
 
     private void HandleUISizing()

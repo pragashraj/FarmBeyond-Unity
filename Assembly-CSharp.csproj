@@ -59,15 +59,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Robot\RobotPurchase.cs" />
-    <Compile Include="Assets\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Vegetation\MelonManager.cs" />
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\Scripts\BuildCamp\BuildCampTrigger.cs" />
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\PlanarReflection.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimatorController.cs" />
-    <Compile Include="Assets\Scripts\TreeController.cs" />
+    <Compile Include="Assets\Scripts\Managers\TreeController.cs" />
     <Compile Include="Assets\Scripts\Barn\GoatController.cs" />
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\GerstnerDisplace.cs" />
     <Compile Include="Assets\Scripts\Barn\PigManager.cs" />
@@ -77,12 +77,12 @@
     <Compile Include="Assets\Scripts\Barn\CowController.cs" />
     <Compile Include="Assets\Scripts\Vegetation\MushroomManager.cs" />
     <Compile Include="Assets\Scripts\Vegetation\VegetationTriggerManager.cs" />
-    <Compile Include="Assets\Scripts\FishingController.cs" />
+    <Compile Include="Assets\Scripts\Managers\FishingController.cs" />
     <Compile Include="Assets\Scripts\Player\ThirdPersonCharacterControl.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\Scripts\Vegetation\FruitManager.cs" />
-    <Compile Include="Assets\Scripts\MineController.cs" />
+    <Compile Include="Assets\Scripts\Managers\MineController.cs" />
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\SpecularLighting.cs" />
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\MeshContainer.cs" />
@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Camera\ThirdPersonOrbitCamBasic.cs" />
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Scripts\Vegetation\CornManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\ProductSellManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\Models\Water\Water\Shaders\FXWaterPro.shader" />
