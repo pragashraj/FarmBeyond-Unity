@@ -125,14 +125,6 @@ public class ProductSellManager : MonoBehaviour
         thirdPersonOrbitCam.enabled = active;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-           
-        }
-    }
-
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Player")

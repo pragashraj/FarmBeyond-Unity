@@ -303,6 +303,7 @@
 -r:"C:/Users/Home/Documents/unity/2021.1.13f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Runtime.Serialization.dll"
 -r:"C:/Users/Home/Documents/unity/2021.1.13f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.dll"
 -r:"C:/Users/Home/Documents/unity/2021.1.13f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll"
+-r:"C:/Users/Home/Documents/unity/2021.1.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
 -r:"C:/Users/Home/Documents/unity/2021.1.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
 -r:"E:/Unity/FarmBeyond/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/log4netPlastic.dll"
 -r:"E:/Unity/FarmBeyond/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll"

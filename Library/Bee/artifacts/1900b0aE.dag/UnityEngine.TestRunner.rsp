@@ -302,6 +302,7 @@
 -r:"C:/Users/Home/Documents/unity/2021.1.13f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Numerics.Vectors.dll"
 -r:"C:/Users/Home/Documents/unity/2021.1.13f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Users/Home/Documents/unity/2021.1.13f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
+-r:"C:/Users/Home/Documents/unity/2021.1.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
 -r:"C:/Users/Home/Documents/unity/2021.1.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
 -r:"E:/Unity/FarmBeyond/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
 "Library/PackageCache/com.unity.test-framework@1.1.26/UnityEngine.TestRunner/AssemblyInfo.cs"

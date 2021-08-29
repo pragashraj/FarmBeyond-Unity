@@ -51,8 +51,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject feedUI;
 
     private GameManager gameManager;
-    private string warnMessage;
     private RobotManager robotManager;
+
+    private string warnMessage;
 
     private void Awake()
     {
