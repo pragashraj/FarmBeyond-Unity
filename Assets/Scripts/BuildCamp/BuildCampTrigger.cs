@@ -9,11 +9,10 @@ public class BuildCampTrigger : MonoBehaviour
     [SerializeField] private GameObject builerManagerObj;
     [SerializeField] private GameObject[] robot_workers;
     [SerializeField] private GameObject build;
-    [SerializeField] private GameObject robotManagerObj;
 
     private ThirdPersonOrbitCamBasic thirdPersonOrbitCam;
     private BuilderManager builderManager;
-    private RobotManager robotManager;
+    private GameManager gameManager;
 
     private bool onStay = false;
     private bool isBuilUiShowable = true;
@@ -23,7 +22,7 @@ public class BuildCampTrigger : MonoBehaviour
     {
         thirdPersonOrbitCam = cameraObj.GetComponent<ThirdPersonOrbitCamBasic>();
         builderManager = builerManagerObj.GetComponent<BuilderManager>();
-        robotManager = robotManagerObj.GetComponent<RobotManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Update()
@@ -90,7 +89,10 @@ public class BuildCampTrigger : MonoBehaviour
         {
             robot_workers[i].SetActive(active);
         }
-        if (!active) robotManager.IncreaseOrDecreaseRobotsUsed(-noOfRobots);
+        if (!active)
+        {
+            gameManager.UsedRobots -= noOfRobots;
+        }
         StartCoroutine(OnBuilding());
     }
 
@@ -100,5 +102,32 @@ public class BuildCampTrigger : MonoBehaviour
         build.SetActive(true);
         SetRobots(noOfRobots, false);
         gameObject.SetActive(false);
+        SetGameManager();
+    }
+
+    private void SetGameManager()
+    {
+        switch (build.gameObject.name)
+        {
+            case "Corn01":
+                gameManager.CornBuilder1 = true;
+                break;
+            case "Corn02":
+                gameManager.CornBuilder2 = true;
+                break;
+            case "Melon01":
+                gameManager.MelonBuilder1 = true;
+                break;
+            case "Melon02":
+                gameManager.MelonBuilder2 = true;
+                break;
+            case "Mushroom01":
+                gameManager.MushroomBuilder1 = true;
+                break;
+            case "Mushroom02":
+                gameManager.MushroomBuilder2 = true;
+                break;
+            default: return;
+        }
     }
 }

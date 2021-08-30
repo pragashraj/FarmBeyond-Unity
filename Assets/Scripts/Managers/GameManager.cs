@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static int galleons = 0;
+    private static int galleons = 20;
     private static int goldToNextLevel = 5;
     private static int goldCurrent = 0;
 
@@ -30,6 +30,13 @@ public class GameManager : MonoBehaviour
     private static int gameLevel = 1;
     private static int totalRobots = 0;
     private static int usedRobots = 0;
+
+    private static bool cornBuilder1 = false;
+    private static bool cornBuilder2 = false;
+    private static bool melonBuilder1 = false;
+    private static bool melonBuilder2 = false;
+    private static bool mushroomBuilder1 = false;
+    private static bool mushroomBuilder2 = false;
 
     public int Galleons { get { return galleons; } set { galleons = value; } }
     public int GoldToNextLevel { get { return goldToNextLevel; } set { goldToNextLevel = value; } }
@@ -59,11 +66,19 @@ public class GameManager : MonoBehaviour
 
     public int GameLevel { get { return gameLevel; } set { gameLevel = value; } }
 
-    private RobotManager robotManager;
+    public int TotalRobots { get { return totalRobots; } set { totalRobots = value; } }
+    public int UsedRobots { get { return usedRobots; } set { usedRobots = value; } }
+
+    public bool CornBuilder1 { get { return cornBuilder1; } set { cornBuilder1 = value; } }
+    public bool CornBuilder2 { get { return cornBuilder2; } set { cornBuilder2 = value; } }
+    public bool MelonBuilder1 { get { return melonBuilder1; } set { melonBuilder1 = value; } }
+    public bool MelonBuilder2 { get { return melonBuilder2; } set { melonBuilder2 = value; } }
+    public bool MushroomBuilder1 { get { return mushroomBuilder1; } set { mushroomBuilder1 = value; } }
+    public bool MushroomBuilder2 { get { return mushroomBuilder2; } set { mushroomBuilder2 = value; } }
+
 
     private void Awake()
     {
-        robotManager = GameObject.Find("RobotManager").GetComponent<RobotManager>();
         Data data = SavingData.LoadPlayer();
         if (data != null)
         {
@@ -78,8 +93,6 @@ public class GameManager : MonoBehaviour
             gameLevel += 1;
             goldToNextLevel *= 2;
         }
-        totalRobots = robotManager.GetTotalRobots;
-        usedRobots = robotManager.GetUsedRobots;
     }
 
     public void SaveGame()
@@ -108,14 +121,26 @@ public class GameManager : MonoBehaviour
                 cotton,
                 gameLevel,
                 totalRobots,
-                usedRobots
+                usedRobots,
+                cornBuilder1,
+                cornBuilder2,
+                melonBuilder1,
+                melonBuilder2,
+                mushroomBuilder1,
+                mushroomBuilder2
             );
+        SavingData.SavePlayer(data);
+    }
+
+    public void Reset()
+    {
+        Data data = new Data(0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, false, false, false, false, false);
         SavingData.SavePlayer(data);
     }
 
     private void LoadData(Data data)
     {
-        galleons = data.galleons;
+        galleons = data.galleons == 0 ? 20 : data.galleons;
         goldCurrent = data.goldCurrent;
         goldToNextLevel = data.goldToNextLevel;
         corns = data.corns;
@@ -137,7 +162,13 @@ public class GameManager : MonoBehaviour
         fishes = data.fishes;
         woods = data.woods;
         gameLevel = data.gameLevel;
-        totalRobots = data.totalRobots;
+        totalRobots = data.totalRobots == 0 ? 2 : 0 ;
         usedRobots = data.usedRobots;
+        cornBuilder1 = data.cornBuilder1;
+        cornBuilder2 = data.cornBuilder2;
+        melonBuilder1 = data.melonBuilder1;
+        melonBuilder2 = data.melonBuilder2;
+        mushroomBuilder1 = data.mushroomBuilder1;
+        mushroomBuilder2 = data.mushroomBuilder1;
     }
 }

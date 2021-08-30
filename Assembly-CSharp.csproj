@@ -62,16 +62,18 @@
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\PlanarReflection.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimatorController.cs" />
     <Compile Include="Assets\Scripts\robotAnimations\LiftScript.cs" />
+    <Compile Include="Assets\Scripts\others\Data.cs" />
     <Compile Include="Assets\Scripts\robotAnimations\CookingSMB.cs" />
     <Compile Include="Assets\Scripts\Managers\TreeController.cs" />
     <Compile Include="Assets\Scripts\Barn\GoatController.cs" />
     <Compile Include="Assets\Scripts\robotAnimations\LiftSMB.cs" />
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\GerstnerDisplace.cs" />
+    <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\others\Sound.cs" />
     <Compile Include="Assets\Scripts\Managers\MenuControlle.cs" />
     <Compile Include="Assets\Scripts\Barn\PigManager.cs" />
     <Compile Include="Assets\Scripts\Barn\ChickenManager.cs" />
     <Compile Include="Assets\Scripts\Barn\SheepController.cs" />
-    <Compile Include="Assets\Scripts\Robot\RobotManager.cs" />
     <Compile Include="Assets\Scripts\robotAnimations\RunningVillagers.cs" />
     <Compile Include="Assets\Scripts\Barn\CowController.cs" />
     <Compile Include="Assets\Scripts\Vegetation\MushroomManager.cs" />
@@ -94,13 +96,12 @@
     <Compile Include="Assets\Scripts\BuildCamp\BuilderManager.cs" />
     <Compile Include="Assets\Scripts\Villager\VilagerAI.cs" />
     <Compile Include="Assets\Scripts\Camera\ThirdPersonOrbitCamBasic.cs" />
+    <Compile Include="Assets\Scripts\others\SavingData.cs" />
     <Compile Include="Assets\Scripts\Managers\ProductSellManager.cs" />
     <Compile Include="Assets\Assets\Models\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Scripts\Vegetation\CornManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\others\Sound.cs" />
-    <Compile Include="Assets\Scripts\others\Data.cs" />
-    <Compile Include="Assets\Scripts\others\SavingData.cs" />
+    <Compile Include="Assets\Scripts\Vegetation\VegetationController.cs" />
+    <Compile Include="Assets\Scripts\Managers\StarterManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\Models\Water\Water\Shaders\FXWaterPro.shader" />

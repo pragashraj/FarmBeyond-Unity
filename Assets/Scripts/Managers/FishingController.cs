@@ -20,13 +20,11 @@ public class FishingController : MonoBehaviour
     private State state = State.EMPTY;
 
     private GameManager gameManager;
-    private RobotManager robotManager;
     private UIManager uIManager;
 
     private void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        robotManager = GameObject.Find("RobotManager").GetComponent<RobotManager>();
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
@@ -100,10 +98,10 @@ public class FishingController : MonoBehaviour
 
     private void HandleOnClick()
     {
-        int totalRobots = robotManager.GetTotalRobots;
+        int totalRobots = gameManager.TotalRobots;
         if (totalRobots != 0)
         {
-            int availableRobots = totalRobots - robotManager.GetUsedRobots;
+            int availableRobots = totalRobots - gameManager.UsedRobots;
             int fishersLength = fishers.Length;
 
             if (fishersLength <= totalRobots && fishersLength <= availableRobots)
@@ -112,8 +110,8 @@ public class FishingController : MonoBehaviour
                 SetProgressUI(true);
                 SetWorkers(true);
                 state = State.FISHING;
-                robotManager.IncreaseOrDecreaseRobotsUsed(fishersLength);
-                StartCoroutine(Mining());
+                gameManager.UsedRobots += fishersLength;
+                StartCoroutine(Fishing());
             }
             else
             {
@@ -134,12 +132,13 @@ public class FishingController : MonoBehaviour
     }
 
 
-    IEnumerator Mining()
+    IEnumerator Fishing()
     {
         yield return new WaitForSecondsRealtime(15);
         state = State.COLLECTED;
         SetWorkers(false);
         SetProgressUI(false);
         SetCollectUI(onStay);
+        gameManager.UsedRobots -= fishers.Length;
     }
 }

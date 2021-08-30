@@ -6,23 +6,21 @@ public class BuilderManager : MonoBehaviour
     [SerializeField] private Text robotNumberUI;
     [SerializeField] private GameObject cameraObj;
     [SerializeField] private GameObject robotsSelecterUI;
-    [SerializeField] private GameObject robotManagerObj;
-    [SerializeField] private GameObject gameManagerObj;
 
     private int robotNumber = 0;
 
     private ThirdPersonOrbitCamBasic thirdPersonOrbitCam;
-    private RobotManager robotManager;
     private GameObject triggerObject;
     private BuildCampTrigger buildCampTrigger;
     private UIManager uIManager;
+    private GameManager gameManager;
 
     private static string currentCampName;
 
     private void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         thirdPersonOrbitCam = cameraObj.GetComponent<ThirdPersonOrbitCamBasic>();
-        robotManager = robotManagerObj.GetComponent<RobotManager>();
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
@@ -71,8 +69,8 @@ public class BuilderManager : MonoBehaviour
         buildCampTrigger = triggerObject.GetComponent<BuildCampTrigger>();
         if (robotNumber > 0)
         {
-            int totalPurchasedRobots = robotManager.GetTotalRobots;
-            int totalUsedRobots = robotManager.GetUsedRobots;
+            int totalPurchasedRobots = gameManager.TotalRobots;
+            int totalUsedRobots = gameManager.UsedRobots;
 
             HandleRobotManager(totalUsedRobots, totalPurchasedRobots);
         } else
@@ -87,7 +85,7 @@ public class BuilderManager : MonoBehaviour
         {
             if (used < total)
             {
-                robotManager.IncreaseOrDecreaseRobotsUsed(robotNumber);
+                gameManager.UsedRobots += robotNumber;
                 buildCampTrigger.HandleRobotWorkers(robotNumber);
                 HandleCancelOnClick();
             } else

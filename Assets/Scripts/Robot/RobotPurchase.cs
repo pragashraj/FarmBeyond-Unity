@@ -13,14 +13,12 @@ public class RobotPurchase : MonoBehaviour
     private int galleons = 0;
 
     private ThirdPersonOrbitCamBasic thirdPersonOrbitCam;
-    private RobotManager robotManager;
     private GameManager gameManager;
     private UIManager uIManager;
 
     private void Start()
     {
         thirdPersonOrbitCam = cameraObj.GetComponent<ThirdPersonOrbitCamBasic>();
-        robotManager = robotManagerObj.GetComponent<RobotManager>();
         gameManager = gameManagerObj.GetComponent<GameManager>();
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
@@ -66,7 +64,7 @@ public class RobotPurchase : MonoBehaviour
         {
             if (galleons <= gameManager.Galleons)
             {
-                robotManager.IncreaseOrDecreaseRobotsTotal(robotCount);
+                gameManager.TotalRobots += robotCount;
                 gameManager.Galleons -= galleons;
                 CloseOnClick();
             }

@@ -20,13 +20,11 @@ public class TreeController : MonoBehaviour
     private State state = State.EMPTY;
 
     private GameManager gameManager;
-    private RobotManager robotManager;
     private UIManager uIManager;
 
     private void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        robotManager = GameObject.Find("RobotManager").GetComponent<RobotManager>();
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
@@ -100,10 +98,10 @@ public class TreeController : MonoBehaviour
 
     private void HandleOnClick()
     {
-        int totalRobots = robotManager.GetTotalRobots;
+        int totalRobots = gameManager.TotalRobots;
         if (totalRobots != 0)
         {
-            int availableRobots = totalRobots - robotManager.GetUsedRobots;
+            int availableRobots = totalRobots - gameManager.UsedRobots;
             int workersLength = workers.Length;
 
             if (workersLength <= totalRobots && workersLength <= availableRobots)
@@ -112,8 +110,8 @@ public class TreeController : MonoBehaviour
                 SetProgressUI(true);
                 SetWorkers(true);
                 state = State.WORKING;
-                robotManager.IncreaseOrDecreaseRobotsUsed(workersLength);
-                StartCoroutine(Mining());
+                gameManager.UsedRobots += workersLength;
+                StartCoroutine(Collecting());
             }
             else
             {
@@ -134,13 +132,13 @@ public class TreeController : MonoBehaviour
     }
 
 
-    IEnumerator Mining()
+    IEnumerator Collecting()
     {
         yield return new WaitForSecondsRealtime(15);
         state = State.COLLECTED;
         SetWorkers(false);
         SetProgressUI(false);
         SetCollectUI(onStay);
-        robotManager.IncreaseOrDecreaseRobotsUsed(-workers.Length);
+        gameManager.UsedRobots -= workers.Length;
     }
 }

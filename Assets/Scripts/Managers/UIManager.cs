@@ -51,14 +51,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject feedUI;
 
     private GameManager gameManager;
-    private RobotManager robotManager;
 
     private string warnMessage;
 
     private void Awake()
     {
         gameManager = gameManagerObj.GetComponent<GameManager>();
-        robotManager = GameObject.Find("RobotManager").GetComponent<RobotManager>();
     }
 
     void Update()
@@ -84,8 +82,8 @@ public class UIManager : MonoBehaviour
         appleText.text = gameManager.Apples.ToString();
         orangeText.text = gameManager.Oranges.ToString();
         warnMessageText.text = warnMessage;
-        robotCountText.text = robotManager.GetTotalRobots.ToString();
-        usedRobotCountText.text = robotManager.GetUsedRobots.ToString();
+        robotCountText.text = gameManager.TotalRobots.ToString();
+        usedRobotCountText.text = gameManager.UsedRobots.ToString();
         eggsText.text = gameManager.Eggs.ToString();
         pigMeatText.text = gameManager.PigMeats.ToString();
         cowMilkText.text = gameManager.CowMilks.ToString();

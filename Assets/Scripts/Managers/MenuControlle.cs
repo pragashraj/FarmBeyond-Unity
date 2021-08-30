@@ -19,6 +19,7 @@ public class MenuControlle : MonoBehaviour
     {
         thirdPersonOrbitCam = GameObject.Find("Main Camera").GetComponent<ThirdPersonOrbitCamBasic>();
         thirdPersonCharacterControl = GameObject.Find("CH").GetComponent<ThirdPersonCharacterControl>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Start()
@@ -70,6 +71,7 @@ public class MenuControlle : MonoBehaviour
         PlayAudio("Click");
         SetImage(mainMenu);
         handleScripts();
+        gameManager.Reset();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -91,5 +93,6 @@ public class MenuControlle : MonoBehaviour
     {
         PlayAudio("Click");
         SetImage(mainMenu);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

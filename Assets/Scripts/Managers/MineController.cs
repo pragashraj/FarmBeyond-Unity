@@ -20,13 +20,11 @@ public class MineController : MonoBehaviour
     private State state = State.EMPTY;
 
     private GameManager gameManager;
-    private RobotManager robotManager;
     private UIManager uIManager;
 
     private void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        robotManager = GameObject.Find("RobotManager").GetComponent<RobotManager>();
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
@@ -100,10 +98,10 @@ public class MineController : MonoBehaviour
 
     private void HandleOnClick()
     {
-        int totalRobots = robotManager.GetTotalRobots;
+        int totalRobots = gameManager.TotalRobots;
         if (totalRobots != 0)
         {
-            int availableRobots = totalRobots - robotManager.GetUsedRobots;
+            int availableRobots = totalRobots - gameManager.UsedRobots;
             int minersLength = miners.Length;
 
             if (minersLength <= totalRobots && minersLength <= availableRobots)
@@ -112,7 +110,7 @@ public class MineController : MonoBehaviour
                 SetProgressUI(true);
                 SetWorkers(true);
                 state = State.MINING;
-                robotManager.IncreaseOrDecreaseRobotsUsed(minersLength);
+                gameManager.UsedRobots += minersLength;
                 StartCoroutine(Mining());
             }
             else
@@ -141,6 +139,7 @@ public class MineController : MonoBehaviour
         SetWorkers(false);
         SetProgressUI(false);
         SetTriggerUI(onStay);
+        gameManager.UsedRobots -= miners.Length;
     }
 
 }

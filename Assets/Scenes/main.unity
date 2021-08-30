@@ -1942,6 +1942,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 37397493}
   range: 10
+--- !u!136 &37397497
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37397491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 1.89
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &38930329
 GameObject:
   m_ObjectHideFlags: 0
@@ -6915,7 +6929,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144675013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.4, y: 0.78, z: -15.39}
+  m_LocalPosition: {x: 18.11, y: 0.15, z: -1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1410361006}
@@ -12919,7 +12933,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925438096}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &253995418
 MonoBehaviour:
@@ -13791,7 +13805,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925438096}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &274258442
 MonoBehaviour:
@@ -15654,7 +15668,7 @@ MonoBehaviour:
   robotPurchaseUI: {fileID: 1569848968}
   cameraObj: {fileID: 489015990}
   robotCountText: {fileID: 2023948254}
-  robotManagerObj: {fileID: 1437670345}
+  robotManagerObj: {fileID: 0}
   gameManagerObj: {fileID: 253995416}
 --- !u!1 &323523092
 GameObject:
@@ -30707,7 +30721,6 @@ MonoBehaviour:
   - {fileID: 134665941}
   - {fileID: 1875462195}
   build: {fileID: 967733973}
-  robotManagerObj: {fileID: 1437670345}
 --- !u!1001 &584956585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31812,6 +31825,20 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!136 &621555159
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621555154}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &622461467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32401,7 +32428,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925438096}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &651240610
 MonoBehaviour:
@@ -35092,7 +35119,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925438096}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &754417282
 MonoBehaviour:
@@ -36729,7 +36756,7 @@ MonoBehaviour:
   melons: {fileID: 2078131552}
   seeders:
   - {fileID: 1321825635}
-  robotManagerObj: {fileID: 1437670345}
+  robotManagerObj: {fileID: 0}
   gameManagerObj: {fileID: 253995416}
 --- !u!1 &793816295 stripped
 GameObject:
@@ -38671,8 +38698,6 @@ MonoBehaviour:
   robotNumberUI: {fileID: 4611850}
   cameraObj: {fileID: 489015990}
   robotsSelecterUI: {fileID: 1089421337}
-  robotManagerObj: {fileID: 1437670345}
-  gameManagerObj: {fileID: 253995416}
 --- !u!4 &835085628
 Transform:
   m_ObjectHideFlags: 0
@@ -38685,7 +38710,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925438096}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &836750984
 PrefabInstance:
@@ -39236,7 +39261,6 @@ MonoBehaviour:
   mushrooms: {fileID: 1629200736}
   seeders:
   - {fileID: 817607103}
-  robotManagerObj: {fileID: 1437670345}
   gameManagerObj: {fileID: 253995416}
 --- !u!1 &849279426 stripped
 GameObject:
@@ -40274,7 +40298,6 @@ MonoBehaviour:
   - {fileID: 708663640}
   - {fileID: 1127541905}
   build: {fileID: 790876620}
-  robotManagerObj: {fileID: 1437670345}
 --- !u!1001 &892928542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40825,7 +40848,6 @@ MonoBehaviour:
   - {fileID: 392452381}
   - {fileID: 2047490009}
   build: {fileID: 2093363759}
-  robotManagerObj: {fileID: 1437670345}
 --- !u!1 &910492725
 GameObject:
   m_ObjectHideFlags: 0
@@ -41477,7 +41499,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1437670346}
   - {fileID: 253995417}
   - {fileID: 835085628}
   - {fileID: 754417281}
@@ -42655,7 +42676,6 @@ MonoBehaviour:
   - {fileID: 619383416}
   - {fileID: 122320356}
   build: {fileID: 1019450267}
-  robotManagerObj: {fileID: 1437670345}
 --- !u!65 &966905574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42723,7 +42743,6 @@ MonoBehaviour:
   seeders:
   - {fileID: 1011662661}
   - {fileID: 258150584}
-  robotManagerObj: {fileID: 1437670345}
   gameManagerObj: {fileID: 253995416}
 --- !u!1 &970370805 stripped
 GameObject:
@@ -45121,7 +45140,6 @@ MonoBehaviour:
   mushrooms: {fileID: 1629200736}
   seeders:
   - {fileID: 1630952210}
-  robotManagerObj: {fileID: 1437670345}
   gameManagerObj: {fileID: 253995416}
 --- !u!1001 &1021195529
 PrefabInstance:
@@ -49056,7 +49074,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925438096}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1117926512
 MonoBehaviour:
@@ -50069,6 +50087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1141210902}
+  - component: {fileID: 1141210903}
   m_Layer: 0
   m_Name: FarmObj
   m_TagString: Untagged
@@ -50099,6 +50118,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1141210903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141210901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f19fbc948b332e4eb96a1829b279364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  builders:
+  - {fileID: 967733973}
+  - {fileID: 1400686251}
+  - {fileID: 2093363759}
+  - {fileID: 790876620}
+  - {fileID: 1019450267}
+  - {fileID: 845158403}
+  buildCamps:
+  - {fileID: 583309103}
+  - {fileID: 2136872713}
+  - {fileID: 907010936}
+  - {fileID: 886282211}
+  - {fileID: 966905572}
+  - {fileID: 1525005113}
 --- !u!1 &1141763797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1460466803834280, guid: 94003cdd02bfa0849b07108d63f10e24, type: 3}
@@ -60942,7 +60987,6 @@ MonoBehaviour:
   seeders:
   - {fileID: 1227435878}
   - {fileID: 1263925757}
-  robotManagerObj: {fileID: 1437670345}
   gameManagerObj: {fileID: 253995416}
 --- !u!1 &1406485072
 GameObject:
@@ -61977,49 +62021,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2491702124098816132, guid: 18e985ab41b4146449b565c7946df7a4, type: 3}
   m_PrefabInstance: {fileID: 1436699860}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1437670345
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1437670346}
-  - component: {fileID: 1437670347}
-  m_Layer: 0
-  m_Name: RobotManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1437670346
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437670345}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 925438096}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1437670347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437670345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd971d5c9de7e8d489b72f347464d497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1438518483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65302,7 +65303,6 @@ MonoBehaviour:
   - {fileID: 353696560}
   - {fileID: 1291604390}
   build: {fileID: 845158403}
-  robotManagerObj: {fileID: 1437670345}
 --- !u!65 &1525005115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87194,7 +87194,7 @@ MonoBehaviour:
   melons: {fileID: 377544516}
   seeders:
   - {fileID: 608001158}
-  robotManagerObj: {fileID: 1437670345}
+  robotManagerObj: {fileID: 0}
   gameManagerObj: {fileID: 253995416}
 --- !u!1001 &2097886232
 PrefabInstance:
@@ -89039,7 +89039,6 @@ MonoBehaviour:
   - {fileID: 970370805}
   - {fileID: 41687878}
   build: {fileID: 1400686251}
-  robotManagerObj: {fileID: 1437670345}
 --- !u!1 &2139826689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: c5c82e09d94064e40879bcb40f0e1204, type: 3}

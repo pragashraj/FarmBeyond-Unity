@@ -9,10 +9,8 @@ public class MushroomManager : MonoBehaviour
     [SerializeField] private GameObject progressingUI;
     [SerializeField] private GameObject mushrooms;
     [SerializeField] private GameObject[] seeders;
-    [SerializeField] private GameObject robotManagerObj;
     [SerializeField] private GameObject gameManagerObj;
 
-    private RobotManager robotManager;
     private GameManager gameManager;
 
     private enum State
@@ -25,7 +23,6 @@ public class MushroomManager : MonoBehaviour
 
     private void Start()
     {
-        robotManager = robotManagerObj.GetComponent<RobotManager>();
         gameManager = gameManagerObj.GetComponent<GameManager>();
     }
 
@@ -99,10 +96,10 @@ public class MushroomManager : MonoBehaviour
 
     private void StartGrowing()
     {
-        if (robotManager.GetTotalRobots - robotManager.GetUsedRobots > 0)
+        if (gameManager.TotalRobots - gameManager.UsedRobots > 0)
         {
             HandleSeeders(true);
-            robotManager.IncreaseOrDecreaseRobotsUsed(2);
+            gameManager.UsedRobots += 2;
             state = State.GROWING;
             StartCoroutine(GrowingEnd(6));
         }
@@ -114,7 +111,7 @@ public class MushroomManager : MonoBehaviour
         mushrooms.SetActive(true);
         state = State.GROWN;
         HandleSeeders(false);
-        robotManager.IncreaseOrDecreaseRobotsUsed(-2);
+        gameManager.UsedRobots -= 2;
         HandleGrowingUI(false);
     }
 
