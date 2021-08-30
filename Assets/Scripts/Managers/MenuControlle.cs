@@ -11,6 +11,7 @@ public class MenuControlle : MonoBehaviour
 
     private ThirdPersonCharacterControl thirdPersonCharacterControl;
     private ThirdPersonOrbitCamBasic thirdPersonOrbitCam;
+    private GameManager gameManager;
 
     private bool showMenu = false;
 
@@ -38,6 +39,11 @@ public class MenuControlle : MonoBehaviour
         menuUI.GetComponent<Image>().sprite = image;
     }
 
+    private void PlayAudio(string name)
+    {
+        FindObjectOfType<AudioManager>().Play(name);
+    }
+
     private void handleScripts()
     {
         showMenu = !showMenu;
@@ -45,16 +51,23 @@ public class MenuControlle : MonoBehaviour
         menuObj.SetActive(showMenu);
         thirdPersonOrbitCam.enabled = !showMenu;
         thirdPersonCharacterControl.enabled = !showMenu;
+
+        if (showMenu)
+        {
+            PlayAudio("Swipe");
+        }
     }
 
     public void HandleContinue()
     {
+        PlayAudio("Click");
         SetImage(mainMenu);
         handleScripts();
     }
 
     public void HandleNewGame()
     {
+        PlayAudio("Click");
         SetImage(mainMenu);
         handleScripts();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -62,17 +75,21 @@ public class MenuControlle : MonoBehaviour
 
     public void HandleOptionsOnClick()
     {
+        PlayAudio("Click");
         SetImage(mainMenuOptions);
     }
 
     public void HandleQuit()
     {
+        PlayAudio("Click");
         SetImage(mainMenu);
+        gameManager.SaveGame();
         Application.Quit();
     }
 
     public void HandleRestart()
     {
+        PlayAudio("Click");
         SetImage(mainMenu);
     }
 }

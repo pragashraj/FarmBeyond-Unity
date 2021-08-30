@@ -2,32 +2,34 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static int galleons;
-    private static int goldToNextLevel;
-    private static int goldCurrent;
+    private static int galleons = 0;
+    private static int goldToNextLevel = 5;
+    private static int goldCurrent = 0;
 
-    private static int corns;
-    private static int melons;
-    private static int mushrooms;
-    private static int apples;
-    private static int oranges;
+    private static int corns = 0;
+    private static int melons = 0;
+    private static int mushrooms = 0;
+    private static int apples = 0;
+    private static int oranges = 0;
 
-    private static int chickens;
-    private static int pigs;
-    private static int cows;
-    private static int goats;
-    private static int sheeps;
+    private static int chickens = 0;
+    private static int pigs = 0;
+    private static int cows = 0;
+    private static int goats = 0;
+    private static int sheeps = 0;
 
-    private static int mines;
-    private static int fishes;
-    private static int woods;
-    private static int eggs;
-    private static int pigMeats;
-    private static int cowMilks;
-    private static int goatMilks;
-    private static int cotton;
+    private static int mines = 0;
+    private static int fishes = 0;
+    private static int woods = 0;
+    private static int eggs = 0;
+    private static int pigMeats = 0;
+    private static int cowMilks = 0;
+    private static int goatMilks = 0;
+    private static int cotton = 0;
 
-    private static int gameLevel;
+    private static int gameLevel = 1;
+    private static int totalRobots = 0;
+    private static int usedRobots = 0;
 
     public int Galleons { get { return galleons; } set { galleons = value; } }
     public int GoldToNextLevel { get { return goldToNextLevel; } set { goldToNextLevel = value; } }
@@ -57,30 +59,16 @@ public class GameManager : MonoBehaviour
 
     public int GameLevel { get { return gameLevel; } set { gameLevel = value; } }
 
+    private RobotManager robotManager;
+
     private void Awake()
     {
-        galleons = 0;
-        goldCurrent = 0;
-        goldToNextLevel = 5;
-        corns = 0;
-        melons = 0;
-        mushrooms = 0;
-        chickens = 0;
-        pigs = 0;
-        cows = 0;
-        goats = 0;
-        sheeps = 0;
-        eggs = 0;
-        pigMeats = 0;
-        cowMilks = 0;
-        goatMilks = 0;
-        cotton = 0;
-        apples = 0;
-        oranges = 0;
-        mines = 0;
-        fishes = 0;
-        woods = 0;
-        gameLevel = 1;
+        robotManager = GameObject.Find("RobotManager").GetComponent<RobotManager>();
+        Data data = SavingData.LoadPlayer();
+        if (data != null)
+        {
+            LoadData(data);
+        }
     }
 
     private void Update()
@@ -90,5 +78,66 @@ public class GameManager : MonoBehaviour
             gameLevel += 1;
             goldToNextLevel *= 2;
         }
+        totalRobots = robotManager.GetTotalRobots;
+        usedRobots = robotManager.GetUsedRobots;
+    }
+
+    public void SaveGame()
+    {
+        Data data = new Data(
+                galleons,
+                goldToNextLevel,
+                goldCurrent,
+                corns,
+                melons,
+                mushrooms,
+                apples,
+                oranges,
+                chickens,
+                pigs,
+                cows,
+                goats,
+                sheeps,
+                mines,
+                fishes,
+                woods,
+                eggs,
+                pigMeats,
+                cowMilks,
+                goatMilks,
+                cotton,
+                gameLevel,
+                totalRobots,
+                usedRobots
+            );
+        SavingData.SavePlayer(data);
+    }
+
+    private void LoadData(Data data)
+    {
+        galleons = data.galleons;
+        goldCurrent = data.goldCurrent;
+        goldToNextLevel = data.goldToNextLevel;
+        corns = data.corns;
+        melons = data.melons;
+        mushrooms = data.mushrooms;
+        chickens = data.chickens;
+        pigs = data.pigs;
+        cows = data.cows;
+        goats = data.goats;
+        sheeps = data.sheeps;
+        eggs = data.eggs;
+        pigMeats = data.pigMeats;
+        cowMilks = data.cowMilks;
+        goatMilks = data.goatMilks;
+        cotton = data.cotton;
+        apples = data.apples;
+        oranges = data.oranges;
+        mines = data.mines;
+        fishes = data.fishes;
+        woods = data.woods;
+        gameLevel = data.gameLevel;
+        totalRobots = data.totalRobots;
+        usedRobots = data.usedRobots;
     }
 }
